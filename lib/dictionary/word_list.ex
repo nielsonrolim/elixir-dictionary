@@ -1,7 +1,5 @@
 defmodule Dictionary.Wordlist do
 
-  alias Dictionary.State
-
   def start do
     "../../assets/words.txt"
     |> Path.expand(__DIR__)
