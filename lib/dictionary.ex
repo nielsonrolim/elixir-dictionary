@@ -1,4 +1,6 @@
 defmodule Dictionary do
-  defdelegate start(), to: Dictionary.Wordlist
-  defdelegate random_word(words), to: Dictionary.Wordlist
+  alias Dictionary.Wordlist
+
+  defdelegate start(), to: Wordlist, as: :word_list
+  defdelegate random_word(words), to: Wordlist
 end

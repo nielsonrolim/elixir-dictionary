@@ -1,6 +1,6 @@
 defmodule Dictionary.Wordlist do
 
-  def start do
+  def word_list do
     "../../assets/words.txt"
     |> Path.expand(__DIR__)
     |> File.read!()
