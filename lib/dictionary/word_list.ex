@@ -1,11 +1,12 @@
 defmodule Dictionary.Wordlist do
+  @me __MODULE__
+
   def start_link() do
-    { :ok, agent } = Agent.start_link(&word_list/0)
-    agent
+    Agent.start_link(&word_list/0, name: @me)
   end
 
-  def random_word(agent) do
-    Agent.get(agent, &Enum.random/1)
+  def random_word() do
+    Agent.get(@me, &Enum.random/1)
   end
 
   defp word_list do
